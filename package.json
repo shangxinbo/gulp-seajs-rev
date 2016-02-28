@@ -1,0 +1,41 @@
+{
+  "name": "gulp-seajs-rev",
+  "version": "0.0.1",
+  "description": "Add Static asset revision manifest to seajs config file",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liugf/gulp-seajs-rev.git"
+  },
+  "author": {
+    "name": "Guangfa Liu"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "seajs",
+    "rev",
+    "revision",
+    "manifest",
+    "version",
+    "versioning",
+    "asset",
+    "assets"
+  ],
+  "dependencies": {
+    "gulp-util": "^3.0.0",
+    "through2": "^0.6.1"
+  },
+  "homepage": "https://github.com/liugf/seajs-rev-manifest",
+  "readme": "# seajs-rev-manifest\n",
+  "readmeFilename": "README.md",
+  "gitHead": "fd624ee9cbfd6a076c7644d43d20444fa037a9a5",
+  "bugs": {
+    "url": "https://github.com/liugf/gulp-seajs-rev/issues"
+  },
+  "_id": "gulp-seajs-rev@0.0.1",
+  "scripts": {},
+  "_shasum": "7d39f9aab426d8c11f95d9e684a984e9611a0302",
+  "_from": "gulp-seajs-rev@0.0.1"
+}
