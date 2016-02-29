@@ -28,7 +28,7 @@ var plugin = function (options) {
 		var jsManifest = [];
 
 		for(var fileName in manifest) {
-			if (fileName.startsWith('js/')) {
+			if (fileName.endsWith('.js')) {
 				jsManifest.push([fileName, manifest[fileName]]);
 			}
 		}
