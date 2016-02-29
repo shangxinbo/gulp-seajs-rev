@@ -1,6 +1,6 @@
 {
   "name": "gulp-seajs-rev",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Add static asset revision manifest to seajs config file",
   "license": "MIT",
   "repository": {
