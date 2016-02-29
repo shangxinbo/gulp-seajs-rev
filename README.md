@@ -30,7 +30,7 @@ gulp.task('build', function() {
 
 ##Options
 ```
-configPath: 追加seajs配置的文件相对路径，相对于 manifest的路径。
+configPath: 需要追加seajs配置的文件相对路径，相对于manifest文件的路径。
 ```
 
 ##Licence
