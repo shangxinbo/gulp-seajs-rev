@@ -1,11 +1,12 @@
 ##Note
-增加seajs的配置，让seajs知道静态资源编译后的路径。
+在seajs配置文件后追加配置，让seajs知道静态资源编译后的路径。
 ```
 seajs.config({map:[
     ['js/a.js', 'js/a-8cd72c35.js'],
     ['js/b.js', 'js/b-8cd72c35.js']
 ]});
 ```
+追加配置后，重新对seajs配置文件签名哈希，并更新到manifest流中。
 
 ##Install
 ```
