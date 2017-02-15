@@ -10,7 +10,7 @@ function md5(str) {
 }
 
 var plugin = function (options) {
-	options = options || {configPath:'js/seajs-config.js'};
+	options = options || {base:'build', configFile:'js/seajs-config.js'};
 	return through.obj(function (file, enc, cb) {
 		if (file.isNull()) {
 			cb(null, file);
@@ -22,7 +22,7 @@ var plugin = function (options) {
 			return;
 		}
 
-		var seajsConfigPath = path.join(path.dirname(file.path), options.configPath);
+		var seajsConfigPath = path.join(options.base, options.configFile);
 
 		var manifest = JSON.parse(file.contents);
 		var jsManifest = [];
@@ -33,13 +33,10 @@ var plugin = function (options) {
 			}
 		}
 
-		var configString = 'seajs.config({map:' + JSON.stringify(jsManifest) + '});'
+		var configString = 'seajs.config({map:' + JSON.stringify(jsManifest) + '});\n'
 		var seajsConfig = fs.readFileSync(seajsConfigPath, 'utf-8');
 
-		if (!seajsConfig.trim().endsWith(';')) {
-			seajsConfig = seajsConfig + ';'
-		}
-		seajsConfig = seajsConfig + configString;
+		seajsConfig = configString + seajsConfig;
 
 		fs.writeFileSync(seajsConfigPath, seajsConfig);
 
@@ -49,8 +46,7 @@ var plugin = function (options) {
 
 		fs.writeFileSync(path.join(path.dirname(seajsConfigPath), filename), seajsConfig);
 
-		var relativeBaseDir = options.configPath.substr(0, options.configPath.lastIndexOf('/'));
-		manifest[options.configPath] = relativeBaseDir + (relativeBaseDir ? ('/' + filename) : filename);
+		manifest[path.basename(seajsConfigPath, ext)+'.js'] = filename;
 
 		file.contents = new Buffer(JSON.stringify(manifest, null, 4));
 
