@@ -10,7 +10,7 @@ seajs.config({map:[
 
 ##Install
 ```
-npm install --save-dev gulp-seajs-rev
+npm install --save-dev shangxinbo/gulp-seajs-rev
 ```
 
 ##Usage
